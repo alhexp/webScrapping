@@ -5,7 +5,7 @@ name: Get Current Date
 on:
   push:
     branches:
-      - main
+      - heir
 
 jobs:
   get-current-date:
