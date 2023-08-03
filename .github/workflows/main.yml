@@ -1,0 +1,40 @@
+# .github/workflows/main.yml
+
+name: Get Current Date
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  get-current-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Get Current Date
+        run: |
+          python get_current_date.py
+        id: get-current-date
+        continue-on-error: true
+
+      - name: Save Current Date to File
+        run: |
+          echo "Current Date: ${{ steps.get-current-date.outputs.current_date }}" > current_date.txt
+
+      - name: Upload Current Date to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          branch: gh-pages
+          files: current_date.txt

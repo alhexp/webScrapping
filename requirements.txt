@@ -1,0 +1,9 @@
+pandas
+numpy
+seaborn
+matplotlib
+nltk
+bs4
+html5lib
+requests
+tweepy
