@@ -36,5 +36,5 @@ jobs:
       - name: Upload Current Date to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          files: current_date.txt
+          publish_branch: gh-pages
+          publish_dir: ./
