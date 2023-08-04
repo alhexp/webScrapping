@@ -38,5 +38,4 @@ jobs:
         with:
           publish_branch: gh-pages
           publish_dir: ./
-          deploy_key: ${{ secrets.scrapping }}
-
+          personal_token: ${{ secrets.GH_WEB_SCRAPPING_TOKEN }}
