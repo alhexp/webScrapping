@@ -8,16 +8,29 @@ on:
       - heir
 
 jobs:
-  get-current-date:
+  deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11
+          cache: 'pip'
+
+      - name: Upgrade pip
+        run: |
+          # install pip=>23.2.1 to use "pip cache dir"
+          python -m pip install --upgrade pip
+
+      - name: Get pip cache dir
+        id: pip-cache
+        run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
 
       - name: Install dependencies
         run: |
@@ -27,11 +40,10 @@ jobs:
         run: |
           python get_current_date.py
         id: get-current-date
-        continue-on-error: true
 
       - name: Save Current Date to File
         run: |
-          echo "Current Date: ${{ steps.get-current-date.outputs.current_date }}" > current_date.txt
+          echo "Current Date: $( python get_current_date.py )" > current_date.txt
 
       - name: Upload Current Date to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
