@@ -54,10 +54,8 @@ jobs:
       
       - name: Check if pip is installed
         run: |
-          if not pip:
-            echo "pip is not installed"
-          else:
-            echo "pip is installed"
+          str = pip --version
+          echo str
 
       - name: Check if Python is installed
         run: |
