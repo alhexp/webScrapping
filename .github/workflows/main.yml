@@ -51,3 +51,17 @@ jobs:
           publish_branch: gh-pages
           publish_dir: ./
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Check if pip is installed
+        run: |
+          if not pip:
+            echo "pip is not installed"
+          else:
+            echo "pip is installed"
+
+      - name: Check if Python is installed
+        run: |
+          if not python:
+            echo "Python is not installed"
+          else:
+            echo "Python is installed"
