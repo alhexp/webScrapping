@@ -12,7 +12,11 @@ def main():
     try:
         with open(archivo, 'a'):
             file.write(current_date + '\n')
+            existe = True
     except FileNotFoundError:
+        pass
+
+    if not existe:
         with open(archivo, 'w') as file:
             file.write(current_date + '\n')
 
