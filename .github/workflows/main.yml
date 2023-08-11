@@ -37,9 +37,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Get Current Date
-        run: |
-          python get_current_date.py
+        run: python get_current_date.py
         id: get-current-date
+        shell: sh
 
       - name: Save Current Date to File
         run: |
