@@ -53,13 +53,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Check if pip is installed
-        run: |
-          pip -V
+        run: pip -V
         shell: sh
 
       - name: Check if Python is installed
-        run: |
-          if not python:
-            echo "Python is not installed"
-          else:
-            echo "Python is installed"
+        run: python --version
+        shell: sh
