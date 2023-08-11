@@ -10,16 +10,10 @@ def main():
     str = f"Current Date: {current_date}" 
     
     try:
-        with open(archivo, 'r'):
-            existe = True
-    except FileNotFoundError:
-        pass
-
-    if not existe:
-        with open(archivo, 'w') as file:
+        with open(archivo, 'a'):
             file.write(current_date + '\n')
-    else:
-        with open(archivo, 'a') as file:
+    except FileNotFoundError:
+        with open(archivo, 'w') as file:
             file.write(current_date + '\n')
 
 if __name__ == "__main__":
