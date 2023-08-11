@@ -54,9 +54,8 @@ jobs:
       
       - name: Check if pip is installed
         run: |
-          echo "pip --version"
-          read code
-          python -c "$code"
+          pip -V
+        shell: sh
 
       - name: Check if Python is installed
         run: |
