@@ -9,3 +9,4 @@ requests
 tweepy
 beautifulsoup4
 selenium
+gitpython
