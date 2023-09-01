@@ -49,8 +49,8 @@ jobs:
         run: |
           pytest
 
-      #- name: Execute Python script
-      #  run: python get_current_date.py
+      - name: Execute Python script
+        run: python get_current_date.py
 
       - name: Upload Current Date to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
