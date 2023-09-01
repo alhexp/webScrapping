@@ -1,6 +1,7 @@
 # get_current_date.py
 
 import datetime
+import requests
 
 def main():
     archivo = 'current_date.txt'
@@ -13,6 +14,7 @@ def main():
         with open(archivo, 'a') as file:
             file.write(current_date + '\n')
             existe = True
+            print("Hola mundo desde Agosto Infinito")
     except FileNotFoundError:
         pass
 
