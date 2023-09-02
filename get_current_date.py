@@ -8,6 +8,7 @@ def main():
     dir = os.getcwd()
     archivo = dir + "\\" + 'current_date.txt'
     existe = False
+    print(os.getcwd(dir))
     print(os.listdir(dir))
     print("hello world")
 
@@ -16,14 +17,14 @@ def main():
 
     try:
         with open(archivo, 'a') as file:
-            file.write(current_date + '\n')
+            file.write(str + '\n')
             existe = True            
     except FileNotFoundError:
         pass
 
     if not existe:
         with open(archivo, 'w') as file:
-            file.write(current_date + '\n')
+            file.write(str + '\n')
 
 if __name__ == "__main__":
     main()
