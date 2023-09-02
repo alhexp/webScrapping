@@ -8,7 +8,7 @@ def main():
     dir = os.getcwd()
     archivo = dir + "\\" + 'current_date.txt'
     existe = False
-    print(os.getcwd(dir))
+    print(os.getcwd())
     print(os.listdir(dir))
     print("hello world")
 
