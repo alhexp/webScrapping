@@ -12,6 +12,7 @@ def main():
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")    
     str = f"Current Date: {current_date}" 
     print(os.getcwd())
+    print("hellowww world")
 
     try:
         with open(archivo, 'a') as file:
