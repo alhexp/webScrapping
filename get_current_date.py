@@ -11,8 +11,8 @@ def main():
     print(os.getcwd())
     print(os.listdir(dir))
     print("hello world")
-    ht = os.chdir(dir + '\public')
-    print(os.getcwd())
+    ht = os.chdir(dir + '/public')
+    print(ht)
 
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")    
     str = f"Current Date: {current_date}"     
