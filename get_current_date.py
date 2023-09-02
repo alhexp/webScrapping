@@ -2,6 +2,8 @@
 
 import datetime
 import requests
+import os
+from git import Repo
 
 def main():
     archivo = 'current_date.txt'
@@ -9,7 +11,8 @@ def main():
 
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")    
     str = f"Current Date: {current_date}" 
-    
+    print(os.getcwd())
+
     try:
         with open(archivo, 'a') as file:
             file.write(current_date + '\n')
