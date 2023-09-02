@@ -3,22 +3,21 @@
 import datetime
 import requests
 import os
-from git import Repo
 
 def main():
-    archivo = 'current_date.txt'
+    dir = os.getcwd()
+    archivo = dir + "\\" + 'current_date.txt'
     existe = False
+    print(os.listdir(dir))
+    print("hello world")
 
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")    
-    str = f"Current Date: {current_date}" 
-    print(os.getcwd())
-    print("hellowww world")
+    str = f"Current Date: {current_date}"     
 
     try:
         with open(archivo, 'a') as file:
             file.write(current_date + '\n')
-            existe = True
-            print("Hola mundo desde Agosto Infinito")
+            existe = True            
     except FileNotFoundError:
         pass
 
