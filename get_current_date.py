@@ -9,9 +9,7 @@ def main():
     archivo = dir + "\\" + 'current_date.txt'
     existe = False
     print(os.getcwd())
-    print("hello world")
-    ht = os.chdir(dir + '/public')
-    ht = ht + '/index.html'
+    ht = dir + '/public/index.html'
     print(ht)
 
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")    
