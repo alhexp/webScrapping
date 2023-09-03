@@ -9,7 +9,6 @@ def main():
     archivo = dir + "\\" + 'current_date.txt'
     existe = False
     print(os.getcwd())
-    print(os.listdir(dir))
     print("hello world")
     ht = os.chdir(dir + '/public')
     print(ht)
