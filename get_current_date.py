@@ -11,6 +11,7 @@ def main():
     print(os.getcwd())
     print("hello world")
     ht = os.chdir(dir + '/public')
+    ht = ht + '/index.html'
     print(ht)
 
     current_date = datetime.datetime.now().strftime("%Y-%m-%d")    
@@ -28,7 +29,7 @@ def main():
             file.write(str + '\n')
 
     try:
-        with open(ht + '/index.html', 'w', encoding='utf-8') as html:
+        with open(ht, 'w', encoding='utf-8') as html:
             html.replace('Current Date', f'Current Date\n%str', count=2)
     except FileNotFoundError:
         pass
