@@ -28,7 +28,7 @@ def main():
             file.write(str + '\n')
 
     try:
-        with open(ht, 'w', encoding='utf-8') as html:
+        with open(ht + '/index.html', 'w', encoding='utf-8') as html:
             html.replace('Current Date', f'Current Date\n%str', count=2)
     except FileNotFoundError:
         pass
