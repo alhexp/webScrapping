@@ -7,6 +7,6 @@ bs4
 html5lib
 requests
 tweepy
-beautifulsoup4
 selenium
 gitpython
+lxml
