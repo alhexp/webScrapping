@@ -10,3 +10,7 @@ tweepy
 selenium
 gitpython
 lxml
+scrapy
+fake_useragent
+urllib.robotparser
+logging

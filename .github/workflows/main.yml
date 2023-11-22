@@ -30,6 +30,16 @@ jobs:
           pip install ruff pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install npm dependencies
+        run: |
+          npm i bootstrap@5.3.2
+  
+
       - name: Get pip cache dir
         run: echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
 
