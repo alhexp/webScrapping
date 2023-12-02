@@ -21,7 +21,7 @@ class GithubSpider(scrapy.Spider):
     yield scrapy.Request(url=self.robots, callback=self.parse_robots)
 
   def parse_robots(self, response):
-    parser = urllib.robotparser.RobotFileParser()
+    parser = robotparser.RobotFileParser()
     parser.parse(str(response.text).splitlines())
         
     if not parser.can_fetch(self.user_agent, response.url[0]):
